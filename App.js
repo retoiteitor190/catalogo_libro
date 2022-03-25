@@ -4,20 +4,21 @@ import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer, TabActions} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; 
 
+import Ionicons from "react-native-vector-icons/Ionicons"
 function HomeScreen(){
 
   return(
-    <view style={styles.container}>
-      <text>Home Screem</text>
-    </view>
+    <View style={styles.container}>
+      <Text>Home Screem</Text>
+    </View>
   )
 }
 
 function SettingsScreen(){
   return(
-    <view style={styles.container}>
-      <text>setting screen </text>
-    </view>
+    <View style={styles.container}>
+      <Text>setting screen </Text>
+    </View>
   )
   }
 
@@ -26,7 +27,23 @@ function SettingsScreen(){
 export default function App() {
   return (
     <NavigationContainer>
-      <tab.Navigator>
+      <tab.Navigator
+      screenOptions={({route})=>({
+        tabBarIcon:({focused, color, size})=>{
+          let iconName;
+          if(route.name == "Home"){
+            iconName = focused
+            ?"ios-information-circle"
+            :"ios-information-circle-outline";
+          }else if (route.name=="Settings"){
+            iconName = "ios-list";
+          } 
+          return <Ionicons name={iconName} size={size} color={color}/>
+        },
+        tabBarActiveTintColor:"red",
+        tabBarInactiveTintColor:"gray",
+      })}
+      >
         <tab.Screen name="Home" component={HomeScreen}/>
         <tab.Screen name="Settings" component={SettingsScreen}/>
       </tab.Navigator>
