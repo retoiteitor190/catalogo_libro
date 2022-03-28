@@ -50,8 +50,8 @@ export default function App() {
       {!user ? (
         <Stack.Navigator>
           <Stack.Screen
-          options={{headerShown:false}}
-          children={{props}=>(
+          options={{ headerShown: false }}
+          children={(props)=>(
             <LoginScreen {...props} onPress={()=>setUser(true)} />
           )}
           name="Login"
@@ -83,6 +83,7 @@ export default function App() {
          />
         <tab.Screen name="Settings" component={SettingsScreen}/>
       </tab.Navigator>
+      
       )}
     </NavigationContainer>
   );
@@ -96,3 +97,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
