@@ -96,5 +96,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button:{
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor:"#00a884",
+    width:150,
+    height:40,
+    borderRadius:10,
+    padding:5,
+    marginTop:10,
+  },
+  text:{
+    color:"#fff",
+  },
 });
 
