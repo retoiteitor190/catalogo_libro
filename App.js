@@ -1,14 +1,16 @@
-import react,{useState} from 'react';
+import React,{useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
-
 import Ionicons from "react-native-vector-icons/Ionicons"
 
-function LoginScreen({onPress}){
+import LoginScreen from "./src/pages/login"
+
+/*function LoginScreen({onPress}){
+
   return(
     <View style={styles.container}>
       <StatusBar/>
@@ -18,7 +20,7 @@ function LoginScreen({onPress}){
       </TouchableOpacity>
     </View>
   );
-}
+}*/
 
 function HomeScreen({onPress}){
 
