@@ -12,7 +12,7 @@ function LoginScreen({onPress}){
   return(
     <View style={styles.container}>
       <StatusBar/>
-      <Text>Loguin Screen</Text>
+      <Text>Login Screen</Text>
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <Text style={styles.text}>Login</Text>
       </TouchableOpacity>
