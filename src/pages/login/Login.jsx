@@ -1,16 +1,16 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import { styles } from "./login.styles";
+
+import ButtonComponent from '../../components/Button/Button.component';
 
 export default function Login({onPress}){
     return(
         <View style={styles.container}>
           <StatusBar/>
           <Text>Login Screen</Text>
-          <TouchableOpacity style={styles.button} onPress={onPress}>
-            <Text style={styles.text}>Login</Text>
-          </TouchableOpacity>
+          <ButtonComponent title="login" onPress={onPress} color="#805288"/>
         </View>
       );
 }

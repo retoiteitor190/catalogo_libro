@@ -1,15 +1,15 @@
 import React,{useState} from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import { styles } from './Home.styles';
+
+import ButtonComponent from '../../components/Button/Button.component';
 
 export default function HomeScreen({onPress}){
 
     return(
       <View style={styles.container}>
         <Text>Home Screen</Text>
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={styles.text}>logOut</Text>
-        </TouchableOpacity>
+        <ButtonComponent  onPress={onPress} color="#805288"/>
       </View>
     )
   }
