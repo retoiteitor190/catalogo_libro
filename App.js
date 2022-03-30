@@ -8,39 +8,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 import LoginScreen from "./src/pages/login"
+import SettingsScreen from './src/pages/Settings/Settings';
+import HomeScreen from './src/pages/Home/Home';
 
-/*function LoginScreen({onPress}){
 
-  return(
-    <View style={styles.container}>
-      <StatusBar/>
-      <Text>Login Screen</Text>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
-        <Text style={styles.text}>Login</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}*/
 
-function HomeScreen({onPress}){
 
-  return(
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
-        <Text style={styles.text}>logOut</Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
-
-function SettingsScreen(){
-  return(
-    <View style={styles.container}>
-      <Text>Setting Screen </Text>
-    </View>
-  )
-  }
 
   const tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator()
