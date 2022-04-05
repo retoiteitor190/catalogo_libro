@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useContext} from 'react';
 
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -10,19 +10,25 @@ import LoginScreen from "../pages/login"
 import SettingsScreen from '../pages/Settings';
 import HomeScreen from '../pages/Home';
 
+import { GlobalContext } from '../context/global/global.context';
+
 const tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
+
+
 
 export default function MainNavigator(){
-    const [user,setUser]=useState(null);
+    const {state,login,logout} = useContext(GlobalContext);
+
+    console.log({state});
   return (
     <NavigationContainer>
-      {!user ? (
+      {!state.user ? (
         <Stack.Navigator>
           <Stack.Screen
           options={{ headerShown: false }}
           children={(props)=>(
-            <LoginScreen {...props} onPress={()=>setUser(true)} />
+            <LoginScreen {...props} onPress={()=> login()} />
           )}
           name="Login"
           />
@@ -48,7 +54,7 @@ export default function MainNavigator(){
         <tab.Screen
          name="Home"
          children={(props)=>(
-           <HomeScreen {...props} onPress={()=>setUser(null)}></HomeScreen>
+           <HomeScreen {...props} onPress={()=>logout()}></HomeScreen>
          )} 
          />
         <tab.Screen name="Settings" component={SettingsScreen}/>
