@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-catalogolibro-dev-162357-authRole",
+      "UnauthRoleArn": "arn:aws:iam::999699860709:role/amplify-catalogolibro-dev-162357-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::999699860709:role/amplify-catalogolibro-dev-162357-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-catalogolibro-dev-162357-deployment",
+      "UnauthRoleName": "amplify-catalogolibro-dev-162357-unauthRole",
+      "StackName": "amplify-catalogolibro-dev-162357",
+      "StackId": "arn:aws:cloudformation:us-east-1:999699860709:stack/amplify-catalogolibro-dev-162357/b6ce97a0-b526-11ec-aba5-12e128654c27",
+      "AmplifyAppId": "d1e8hursulagpu"
+    },
+    "categories": {
+      "auth": {
+        "catalogolibro9862a0e3": {}
+      }
+    }
+  }
+}
