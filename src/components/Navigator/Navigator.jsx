@@ -12,55 +12,56 @@ import HomeScreen from '../../pages/Home';
 
 import { GlobalContext } from '../../context/global/global.context';
 
-const tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-
-
-export default function MainNavigator(){
-    const {state,login,logout} = useContext(GlobalContext);
+export default function MainNavigator({ signOut }){
+    const {state, login, logout} = useContext(GlobalContext);
 
     console.log({state});
   return (
-    <NavigationContainer>
-      {!state.user ? (
-        <Stack.Navigator>
-          <Stack.Screen
-          options={{ headerShown: false }}
-          children={(props)=>(
-            <LoginScreen {...props} onPress={()=> login()} />
-          )}
+   <NavigationContainer>
+     {!state.user ? (
+       <Stack.Navigator>
+         <Stack.Screen
+         options={{ headerShown: false }}
+         children={(props) => (
+           <LoginScreen {... props} onPress={() => login()} />
+         )}
           name="Login"
-          />
+        />
         </Stack.Navigator>
-      ):(
-        <tab.Navigator
-      screenOptions={({route})=>({
-        tabBarIcon:({focused, color, size})=>{
-          let iconName;
-          if(route.name == "Home"){
-            iconName = focused
-            ?"ios-information-circle"
-            :"ios-information-circle-outline";
-          }else if (route.name=="Settings"){
-            iconName = "ios-list";
-          } 
-          return <Ionicons name={iconName} size={size} color={color}/>
-        },
-        tabBarActiveTintColor:"red",
-        tabBarInactiveTintColor:"gray",
-      })}
-      >
-        <tab.Screen
-         name="Home"
-         children={(props)=>(
-           <HomeScreen {...props} onPress={()=>logout()}></HomeScreen>
-         )} 
-         />
-        <tab.Screen name="Settings" component={SettingsScreen}/>
-      </tab.Navigator>
-      
-      )}
-    </NavigationContainer>
+
+     ) : (
+     <Tab.Navigator 
+     screenOptions={({route})=>({
+       tabBarIcon:({focused, color, size})=>{
+         let iconName;
+
+         if(route.name === "Home"){
+           iconName = focused
+           ? "ios-home"
+           : "ios-home-outline";
+         } else if(route.name === "Settings") {
+           iconName = "ios-list";
+         }
+
+         return <Ionicons name={iconName} size={size} color={color}></Ionicons>
+
+       },
+
+       tabBarActiveTintColor: "blue",
+       tabBarInactiveTintColor: "gray",
+     })}
+     >
+       <Tab.Screen name="Home"
+       children={(props) => (
+         <HomeScreen {...props} onPress={() => signOut()} />
+       )}
+       />
+       <Tab.Screen name="Settings" component={SettingsScreen} />
+     </Tab.Navigator>
+     )}
+   </NavigationContainer>
   );
 }
