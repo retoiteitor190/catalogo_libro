@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainNavigator from './src/Navigator/Navigator';
+import MainNavigator from './src/components/Navigator/Navigator';
 
 import {GlobalProvider} from './src/context/global/global.context'
 export default function App() {

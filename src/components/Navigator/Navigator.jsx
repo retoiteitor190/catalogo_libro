@@ -6,11 +6,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
 import Ionicons from "react-native-vector-icons/Ionicons"
 
-import LoginScreen from "../pages/login"
-import SettingsScreen from '../pages/Settings';
-import HomeScreen from '../pages/Home';
+import LoginScreen from "../../pages/login"
+import SettingsScreen from '../../pages/Settings';
+import HomeScreen from '../../pages/Home';
 
-import { GlobalContext } from '../context/global/global.context';
+import { GlobalContext } from '../../context/global/global.context';
 
 const tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
