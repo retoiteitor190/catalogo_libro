@@ -58,7 +58,7 @@ return (
          onChangeText={(text)=>
           setTodo((current) =>({...current, nombre: text}))
       }
-       style={{width:200, height:40, backgroundColor:"#EE74FB"}} 
+       style={{width:200, height:40, backgroundColor:"#0BD5C2"}} 
        />
        <Text>Descripcion</Text>
         <TextInput 
@@ -78,28 +78,28 @@ return (
          onChangeText={(text)=>
           setTodo((current) =>({...current, estatus: text}))
       }
-       style={{width:200, height:40, backgroundColor:"#EE74FB"}} 
+       style={{width:200, height:40, backgroundColor:"#0BD5C2"}} 
        />
        <Text>ISBN</Text>
         <TextInput
          onChangeText={(text)=>
           setTodo((current) =>({...current, isbn: text}))
       }
-       style={{width:200, height:40, backgroundColor:"#EE74FB"}} 
+       style={{width:200, height:40, backgroundColor:"#0BD5C2"}} 
        />
        <Text>Categoria</Text>
         <TextInput
          onChangeText={(text)=>
           setTodo((current) =>({...current, categoria: text}))
       }
-       style={{width:200, height:40, backgroundColor:"#EE74FB"}} 
+       style={{width:200, height:40, backgroundColor:"#0BD5C2"}} 
        />
        <Text>Fecha de publicación</Text>
         <TextInput
          onChangeText={(text)=>
           setTodo((current) =>({...current, fechapublicacion: text}))
       }
-       style={{width:200, height:40, backgroundColor:"#EE74FB"}} 
+       style={{width:200, height:40, backgroundColor:"#0BD5C2"}} 
        />
         <ButtonComponent title="Create Todo" onPress={addData} />
 
